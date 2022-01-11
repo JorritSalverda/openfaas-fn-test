@@ -1,0 +1,7 @@
+apiVersion: openfaas.com/v1
+kind: Function
+metadata:
+  name: {{ include "openfaas-fn-test.fullname" . }}
+spec:
+  name: {{ include "openfaas-fn-test.fullname" . }}
+  image: {{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
